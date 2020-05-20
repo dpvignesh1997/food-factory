@@ -11,7 +11,7 @@ const MongoStore = require('connect-mongo')(session);
 const _1 = require("./");
 const router_1 = require("./router");
 // Server Running Port
-const port = 80;
+const port = process.env.PORT || 4000;
 class FoodFactory {
     constructor() {
         // MongoDB Connection Manager
@@ -20,6 +20,7 @@ class FoodFactory {
         require('dotenv').config();
         // Initialize Express App
         this.app = express();
+        this.app.use(express.static('public'));
         // Inject Body Parser for Parsing JSON
         this.app.use(bodyParser.json());
         // Inject Body Parser for Parsing Form Data
@@ -46,9 +47,9 @@ class FoodFactory {
         // Initialize Passport session
         this.app.use(passport.session());
         // Food Factory Route Manager
-        this.app.get('/', function (req, res) {
-            res.send('<b>Food Factory</b>');
-        });
+        // this.app.get('/', function (req, res) {
+        // res.send('<b>Food Factory</b>');
+        // });
         new router_1.Router(this.app);
     }
 }

@@ -10,7 +10,7 @@ import { DataBase } from "./";
 import { Router } from './router';
 
 // Server Running Port
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 export class FoodFactory {
     // MongoDB Connection Manager
@@ -23,6 +23,7 @@ export class FoodFactory {
         require('dotenv').config()
         // Initialize Express App
         this.app = express()
+        this.app.use(express.static('public'))
         // Inject Body Parser for Parsing JSON
         this.app.use(bodyParser.json())
         // Inject Body Parser for Parsing Form Data
@@ -51,9 +52,6 @@ export class FoodFactory {
         this.app.use(passport.session());
         // Food Factory Route Manager
 
-        this.app.get('/', function (req, res) {
-            res.send('<b>Food Factory</b>');
-        });
         new Router(this.app)
     }
 }
