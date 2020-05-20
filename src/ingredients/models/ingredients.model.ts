@@ -10,23 +10,6 @@ import {
 import { object, string, number } from "@hapi/joi";
 
 /**
- * Interface definition for Ingredient model
- * @extends Document (Mongoose)
- */
-export interface ingredientsInterface extends Document {
-    name: string,
-    code: string,
-    available_qty: number,
-    threshold_qty: number,
-    vendor: vendorsInterface['_id'],
-    created_by: userInterface['_id'],
-    updated_by: userInterface['_id'],
-    expiration: Date,
-    created_at: Date,
-    updated_at: Date
-}
-
-/**
  * Definition for Ingredients Model
  * @exports IngredientsModel
  * @access constructor
@@ -73,6 +56,24 @@ export class IngredientsModel {
         let Ingredient: Model<ingredientsInterface> = db.model<ingredientsInterface>('Ingredient', this.ingredientSchema);
         return Ingredient
     }
+}
+
+
+/**
+ * Interface definition for Ingredient model
+ * @extends Document (Mongoose)
+ */
+export interface ingredientsInterface extends Document {
+    name: string,
+    code: string,
+    available_qty: number,
+    threshold_qty: number,
+    vendor: vendorsInterface['_id'],
+    created_by: userInterface['_id'],
+    updated_by: userInterface['_id'],
+    expiration: Date,
+    created_at: Date,
+    updated_at: Date
 }
 
 export const IngredientsSchemaValidator = object({

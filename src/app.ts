@@ -8,6 +8,7 @@ import cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo')(session);
 import { DataBase } from "./";
 import { Router } from './router';
+import * as morgan from "morgan";
 
 // Server Running Port
 const port = process.env.PORT || 4000;
@@ -23,11 +24,14 @@ export class FoodFactory {
         require('dotenv').config()
         // Initialize Express App
         this.app = express()
+        // Public Content
         this.app.use(express.static('public'))
         // Inject Body Parser for Parsing JSON
         this.app.use(bodyParser.json())
         // Inject Body Parser for Parsing Form Data
         this.app.use(bodyParser.urlencoded({ extended: false }))
+        // Logger
+        this.app.use(morgan('combined'))
         // Enabale CORS
         this.app.use(cors())
         // Use of Cookies

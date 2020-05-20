@@ -72,7 +72,7 @@ export class Session {
              * @responsetype {JSON}
              */
             console.error(error);
-            res.status(406).json({
+            res.status(405).json({
                 message: Messages.INPUT_NOT_VALID
             })
             return
