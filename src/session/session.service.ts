@@ -347,11 +347,12 @@ export class Session {
                     })).save()
 
                     // Response on Successful Login
-                    res.json({
-                        message: `Welcome ${user['first_name']} ${user['last_name']}`,
-                        token,
-                        user: payload
-                    })
+                    // res.json({
+                    //     message: `Welcome ${user['first_name']} ${user['last_name']}`,
+                    //     token,
+                    //     user: payload
+                    // })
+                    res.send(token)
                 })
             })
     }

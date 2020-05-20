@@ -13,7 +13,7 @@ enum SessionMessages {
     FORGOT_PASSWORD = 'Password Reset mail has been sent!',
     CHANGE_PASSWORD = 'Password has been Reset!',
     PASSWORD_DOES_NOT_MATCH = 'Passwords does not match!',
-    RESET_PASSWORD_TOKEN_NOT_VALID = 'Reset Passwword token is not valid!',
+    RESET_PASSWORD_TOKEN_NOT_VALID = 'Invalid Token!',
     USER_DEACTIVATED = 'Account Successfully Deactivated!',
     INPUT_NOT_VALID = "Provided Input is not valid!",
 }
