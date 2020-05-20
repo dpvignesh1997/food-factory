@@ -108,12 +108,12 @@ export class Session {
             /**
              * If User already exist with Email
              * @return {Response} 
-             * @status {NOT ACCEPTED} 406
+             * @status {INVALID INPUT} 405
              * @message Email already exist!
              * @responsetype {JSON}
              */
             if (userWithEmail) {
-                res.status(406).json({
+                res.status(405).json({
                     message: Messages.EMAIL_EXIST
                 })
                 return
@@ -457,7 +457,7 @@ export class Session {
                     []
                 ).then(() => {
                     res.json({
-                        message: Messages.FORGOT_PASSWORD
+                        message: Messages.CHANGE_PASSWORD
                     })
                 }).catch(err => {
                     /**
