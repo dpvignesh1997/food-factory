@@ -10,7 +10,7 @@ import { DataBase } from "./";
 import { Router } from './router';
 
 // Server Running Port
-const port = 80;
+const port = 4000;
 
 export class FoodFactory {
     // MongoDB Connection Manager

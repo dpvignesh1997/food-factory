@@ -46,12 +46,16 @@ class FoodFactory {
         // Initialize Passport session
         this.app.use(passport.session());
         // Food Factory Route Manager
+        this.app.get('/', function (req, res) {
+            res.send('<b>Food Factory</b>');
+        });
         new router_1.Router(this.app);
     }
 }
 exports.FoodFactory = FoodFactory;
 // Create Node.JS server with Express
-http.createServer(new FoodFactory().app).listen(port);
-// Log
-console.log(`App Running!, Port: ${port}`);
+http.createServer(new FoodFactory().app).listen(port, () => {
+    // Log
+    console.log(`App Running!, Port: ${port}`);
+});
 //# sourceMappingURL=app.js.map

@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "start:linux": "tsc && npm run copy:assets && node dist/app.js",
-    "start": "tsc && node dist/app.js",
+    "start": "node dist/app.js",
     "build": "tsc",
     "copy:assets": "cp -r assets/* dist",
     "test": "echo \"Error: no test specified\" && exit 1"
