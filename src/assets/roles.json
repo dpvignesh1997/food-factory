@@ -1,0 +1,14 @@
+[
+    {
+        "_id": "5e7a838f9ba7582b0cfa3df0",
+        "role_name": "USER",
+        "role_permission": {},
+        "level": 1
+    },
+    {
+        "_id": "5e7a838f9ba7582b0cfa3df1",
+        "role_name": "ADMIN",
+        "role_permission": {},
+        "level": 2
+    }
+]

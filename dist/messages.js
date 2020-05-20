@@ -1,0 +1,70 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var SessionMessages;
+(function (SessionMessages) {
+    SessionMessages["USER_NOT_FOUND"] = "Username or Password is incorrect!";
+    SessionMessages["NOT_A_VALID_EMAIL"] = "Email ID is not valid!";
+    SessionMessages["NOT_A_VALID_USERNAME"] = "Username is not valid!";
+    SessionMessages["EMAIL_EXIST"] = "Email already exist!";
+    SessionMessages["EMAIL_AVAILABLE"] = "Email available!";
+    SessionMessages["USERNAME_EXIST"] = "Username already exist!";
+    SessionMessages["USERNAME_AVAILABLE"] = "Username available!";
+    SessionMessages["NO_AUTH"] = "Not Authorized!";
+    SessionMessages["CANT_PROCESS"] = "Cannot Process!";
+    SessionMessages["INTERNAL_SERVER_ERROR"] = "Internal Server Error!";
+    SessionMessages["SIGNUP_FAILED"] = "Registration Failed!";
+    SessionMessages["FORGOT_PASSWORD"] = "Password Reset mail has been sent!";
+    SessionMessages["CHANGE_PASSWORD"] = "Password has been Reset!";
+    SessionMessages["PASSWORD_DOES_NOT_MATCH"] = "Passwords does not match!";
+    SessionMessages["RESET_PASSWORD_TOKEN_NOT_VALID"] = "Reset Passwword token is not valid!";
+    SessionMessages["USER_DEACTIVATED"] = "Account Successfully Deactivated!";
+    SessionMessages["INPUT_NOT_VALID"] = "Provided Input is not valid!";
+})(SessionMessages || (SessionMessages = {}));
+exports.Messages = SessionMessages;
+var IngredientMessages;
+(function (IngredientMessages) {
+    IngredientMessages["INGREDEINT_WITH_CODE_EXIST"] = "Ingredient with provided code already exists!";
+    IngredientMessages["NO_INGREDEINT_WITH_CODE_EXIST"] = "Ingredient with provided code does not exists!";
+    IngredientMessages["VENDOR_NOT_AVAILBLE"] = "Vendor is not valid!";
+    IngredientMessages["CREATED"] = "Ingredient created successfully!";
+    IngredientMessages["UPDATE_MANY"] = "Ingredients updated successfully!";
+    IngredientMessages["UPDATE_ONE"] = "Ingredient updated successfully!";
+    IngredientMessages["DELETE_ONE"] = "Ingredient deleted successfully!";
+    IngredientMessages["NO_ENTRIES_FOUND"] = "No Ingredient Entries found!";
+})(IngredientMessages || (IngredientMessages = {}));
+exports.IngredientMessages = IngredientMessages;
+var VendorMessages;
+(function (VendorMessages) {
+    VendorMessages["VENDOR_WITH_CODE_EXIST"] = "Vendor with provided code already exists!";
+    VendorMessages["NO_VENDOR_WITH_CODE_EXIST"] = "Vendor with provided code does not exists!";
+    VendorMessages["CREATED"] = "Vendor created successfully!";
+    VendorMessages["UPDATE_MANY"] = "Vendors updated successfully!";
+    VendorMessages["UPDATE_ONE"] = "Vendor updated successfully!";
+    VendorMessages["DELETE_ONE"] = "Vendor deleted successfully!";
+    VendorMessages["NO_ENTRIES_FOUND"] = "No Vendor Entries found!";
+})(VendorMessages || (VendorMessages = {}));
+exports.VendorMessages = VendorMessages;
+var FoodMessages;
+(function (FoodMessages) {
+    FoodMessages["FOOD_WITH_CODE_EXIST"] = "Food with provided code already exists!";
+    FoodMessages["NO_FOOD_WITH_CODE_EXIST"] = "Food with provided code does not exists!";
+    FoodMessages["NO_FOOD_WITH_NAME_EXIST"] = "Food with provided name does not exists!";
+    FoodMessages["CREATED"] = "Food created successfully!";
+    FoodMessages["UPDATE_MANY"] = "Foods updated successfully!";
+    FoodMessages["UPDATE_ONE"] = "Food updated successfully!";
+    FoodMessages["DELETE_ONE"] = "Food deleted successfully!";
+    FoodMessages["NO_ENTRIES_FOUND"] = "No Food Entries found!";
+})(FoodMessages || (FoodMessages = {}));
+exports.FoodMessages = FoodMessages;
+var OrderMessages;
+(function (OrderMessages) {
+    OrderMessages["NO_SUFFICIENT_INGREDIENTS_AVAILABLE"] = "Sufficient amount of ingredients are not avaialble to place the order!";
+    OrderMessages["CREATED"] = "Order placed successfully!";
+    OrderMessages["USER_NOT_FOUND"] = "User not Found!";
+    OrderMessages["NO_ENTRIES_FOUND"] = "No Orders found!";
+    OrderMessages["NO_ORDER_EXIST"] = "Order with provided ID does not exists!";
+    OrderMessages["ORDER_DELIVERED"] = "Sorry you cannot cancel this order, it is already delivered!";
+    OrderMessages["ORDER_CANCELLED"] = "Your order has been cancelled!";
+})(OrderMessages || (OrderMessages = {}));
+exports.OrderMessages = OrderMessages;
+//# sourceMappingURL=messages.js.map

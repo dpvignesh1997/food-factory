@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "outDir": "dist",
+        "lib": [
+            "es2018",
+            "dom"
+        ],
+        "baseUrl": "src",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "paths": {
+            "src/*": [
+                "src/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "compileOnSave": false,
+    "exclude": [
+        "node_modules"
+    ]
+}
