@@ -189,9 +189,10 @@ export class Vendors {
     }
 
     updateVendorByCode = (req: Request, res: Response, next: NextFunction) => {
-        let { code, contact, status, created_by } = req.body;
+        let { code, name, contact, status, created_by } = req.body;
 
         let $set = {}
+        if (name) $set['name'] = name;
         if (contact) $set['contact'] = contact;
         if (status) $set['status'] = status;
 

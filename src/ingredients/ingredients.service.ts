@@ -72,7 +72,7 @@ export class Ingredients {
                     return
                 }
 
-                this.Vendors.findOne({ _id: vendor }).exec((err, _vendor) => {
+                this.Vendors.findOne({ code: vendor }).exec((err, _vendor) => {
                     /**
                      * If error in fetching User
                      * @return {Response}
