@@ -176,7 +176,9 @@ export class Order {
                     return
                 }
 
-                res.json(orders)
+                res.json({
+                    orders
+                })
             })
         })
     }

@@ -145,18 +145,21 @@ export class Food {
         }
     }
 
-    getFoodByName = (req: Request, res: Response, next: NextFunction) => {
+    getFoodByNameOrCode = (req: Request, res: Response, next: NextFunction) => {
 
-        let { name } = req.query;
+        let { name, code } = req.query;
+        let query = {}
+        if (name) query['name'] = name;
+        if (code) query['code'] = code;
 
-        if (!name) {
+        if (query === {}) {
             res.status(405).json({
                 message: Messages.INPUT_NOT_VALID
             })
             return
         }
 
-        this.Food.findOne({ name })
+        this.Food.findOne(query)
             .populate('created_by')
             .populate('updated_by')
             .exec((err, food) => {
@@ -182,7 +185,9 @@ export class Food {
                     return
                 }
 
-                res.json(food)
+                res.json({
+                    food
+                })
             })
     }
 
@@ -210,14 +215,17 @@ export class Food {
                 })
             }
 
-            res.json(food)
+            res.json({
+                food
+            })
         })
     }
 
     updateSellingOrProductionCost = (req: Request, res: Response, next: NextFunction) => {
-        let { food, cost_of_production, selling_cost } = req.body;
+        let { food, name, cost_of_production, selling_cost } = req.body;
 
         let $set = {}
+        if (name) $set['name'] = name;
         if (cost_of_production) $set['cost_of_production'] = cost_of_production;
         if (selling_cost) $set['selling_cost'] = selling_cost;
 

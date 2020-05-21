@@ -41,6 +41,6 @@ export class IngredientsRoutes {
         // Route for Update Ingredient
         this.router.put('/qty', this.passport.authenticate('bearer', this.session), this._ingredients.updateIngredientByCode);
         // Route for Delete Ingredient
-        this.router.delete('/', this.passport.authenticate('bearer', this.session), this._ingredients.deleteIngredients);
+        this.router.delete('/byCode', this.passport.authenticate('bearer', this.session), this._ingredients.deleteIngredients);
     }
 }
