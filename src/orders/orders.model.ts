@@ -55,6 +55,11 @@ export class OrdersModel {
     }
 }
 
+/**
+ * Enum for Food status
+ * @constant {1, 2, 3}
+ * @default 1
+ */
 export enum OrderStatus {
     PENDING = 1,
     DELIVERED = 2,

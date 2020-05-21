@@ -76,6 +76,7 @@ export interface ingredientsInterface extends Document {
     updated_at: Date
 }
 
+// Joi Validator for Ingredients Schema
 export const IngredientsSchemaValidator = object({
     name: string()
         .alphanum()

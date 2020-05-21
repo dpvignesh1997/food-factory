@@ -55,6 +55,11 @@ export class FoodModel {
     }
 }
 
+/**
+ * Enum for Food status
+ * @constant {1, 2}
+ * @default 1
+ */
 export enum foodStatus {
     ACTIVE = 1,
     INACTIVE = 2
@@ -75,6 +80,7 @@ export interface foodInterface extends Document {
     updated_at: Date
 }
 
+// Food Schema Validator
 export const FoodsSchemaValidator = object({
     name: string()
         .alphanum()

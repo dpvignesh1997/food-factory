@@ -53,6 +53,11 @@ export class VendorsModel {
     }
 }
 
+/**
+ * Enum for Vendor status
+ * @constant {1, 2}
+ * @default 1
+ */
 export enum vendorStatus {
     ACTIVE = 1,
     DISCONTINUED = 2
@@ -72,6 +77,7 @@ export interface vendorsInterface extends Document {
     updated_at: Date
 }
 
+// Joi Validator for Vendor Schema
 export const VendorSchemaValidator = object({
     name: string()
         .alphanum()

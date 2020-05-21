@@ -68,7 +68,7 @@ export class Order {
 
                     newOrder.save(async (err, savedOrder) => {
                         /**
-                         * If error in fetching User
+                         * If error in fetching Order
                          * @return {Response}
                          * @status {INTERNAL SERVER ERROR} 500
                          * @message Internal Server Error!
@@ -155,7 +155,7 @@ export class Order {
 
             this.Orders.find({ user: _user._id }).exec((err, orders) => {
                 /**
-                 * If error in fetching User
+                 * If error in fetching Order
                  * @return {Response}
                  * @status {INTERNAL SERVER ERROR} 500
                  * @message Internal Server Error!
@@ -197,7 +197,7 @@ export class Order {
         try {
             this.Orders.findOne({ _id: new ObjectId(order) }).exec(async (err, _order) => {
                 /**
-                 * If error in fetching User
+                 * If error in fetching Order
                  * @return {Response}
                  * @status {INTERNAL SERVER ERROR} 500
                  * @message Internal Server Error!
