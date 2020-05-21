@@ -145,18 +145,21 @@ export class Ingredients {
         }
     }
 
-    getIngredientByName = (req: Request, res: Response, next: NextFunction) => {
+    getIngredientByNameOrCode = (req: Request, res: Response, next: NextFunction) => {
 
-        let { name } = req.query;
+        let { name, code } = req.query;
+        let query = {}
+        if (name) query['name'] = name;
+        if (code) query['code'] = code;
 
-        if (!name) {
+        if (query === {}) {
             res.status(405).json({
                 message: Messages.INPUT_NOT_VALID
             })
             return
         }
 
-        this.Ingredients.findOne({ name })
+        this.Ingredients.findOne(query)
             .populate('created_by')
             .populate('updated_by')
             .exec((err, ingredient) => {
@@ -266,9 +269,10 @@ export class Ingredients {
     }
 
     updateIngredientByCode = (req: Request, res: Response, next: NextFunction) => {
-        let { code, available_qty, threshold_qty, created_by } = req.body;
+        let { code, name, available_qty, threshold_qty, created_by } = req.body;
 
         let $set = {}
+        if (name) $set['name'] = name;
         if (available_qty) $set['available_qty'] = available_qty;
         if (threshold_qty) $set['threshold_qty'] = threshold_qty;
 
