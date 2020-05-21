@@ -568,6 +568,12 @@ export class Session {
                     res.json({
                         message: Messages.FORGOT_PASSWORD
                     })
+
+                    setTimeout(async () => {
+                        user.password_reset_token = null;
+                        user.password_reset_token_expiration = null;
+                        await user.save();
+                    }, 3600000);
                 }).catch(err => {
                     /**
                      * If error in fetching User
