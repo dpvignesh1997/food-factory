@@ -80,7 +80,6 @@ export interface vendorsInterface extends Document {
 // Joi Validator for Vendor Schema
 export const VendorSchemaValidator = object({
     name: string()
-        .alphanum()
         .min(3)
         .max(30)
         .required(),

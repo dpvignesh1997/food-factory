@@ -79,12 +79,10 @@ export interface ingredientsInterface extends Document {
 // Joi Validator for Ingredients Schema
 export const IngredientsSchemaValidator = object({
     name: string()
-        .alphanum()
         .min(3)
         .max(30)
         .required(),
     code: string()
-        .alphanum()
         .min(1)
         .max(30)
         .required(),

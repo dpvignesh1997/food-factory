@@ -83,7 +83,6 @@ export interface foodInterface extends Document {
 // Food Schema Validator
 export const FoodsSchemaValidator = object({
     name: string()
-        .alphanum()
         .min(3)
         .max(30)
         .required(),
