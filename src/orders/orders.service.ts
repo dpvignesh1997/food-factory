@@ -212,7 +212,7 @@ export class Order {
 
                 if (_order.status === OrderStatus.DELIVERED) {
                     res.status(400).json({
-                        message: OrderMessages
+                        message: OrderMessages.ORDER_DELIVERED
                     })
                     return
                 }
