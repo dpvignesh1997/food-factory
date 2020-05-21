@@ -11,6 +11,7 @@ import {
     OrderMessages
 } from "..";
 import { ObjectID } from "mongodb";
+import moment = require("moment");
 
 export class OrdersHelper {
 
@@ -77,8 +78,12 @@ export class OrdersHelper {
                 for (let key of Object.keys(requiredIngredientsQty)) {
                     let _ingredient = await this.Ingredients.findOne({ _id: new ObjectID(key) }).exec();
                     if (_ingredient) {
-                        _ingredient.available_qty = _ingredient.available_qty - requiredIngredientsQty[key];
-                        await _ingredient.save()
+                        await this.Ingredients.updateOne({ _id: _ingredient._id }, {
+                            $set: {
+                                available_qty: _ingredient.available_qty - requiredIngredientsQty[key],
+                                updated_at: moment.utc().toDate()
+                            }
+                        }).exec()
                     }
                 }
 

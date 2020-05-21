@@ -34,14 +34,6 @@ export class Order {
 
     // User Model reference
     User: Model<userInterface> = new UserModel().getModel();
-    // User Log Model reference
-    UserLog: Model<userLogInterface> = new UserLogModel().getModel();
-    // Ingredients Model reference
-    Ingredients: Model<ingredientsInterface> = new IngredientsModel().getModel();
-    // Food Model reference
-    Food: Model<foodInterface> = new FoodModel().getModel();
-    // FoodIngredients Model reference
-    FoodIngredients: Model<foodIngredientsInterface> = new FoodIngredientsModel().getModel();
     // Orders Model reference
     Orders: Model<ordersInterface> = new OrdersModel().getModel();
     // OrderedFood Model reference
