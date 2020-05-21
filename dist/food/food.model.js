@@ -46,14 +46,19 @@ class FoodModel {
     }
 }
 exports.FoodModel = FoodModel;
+/**
+ * Enum for Food status
+ * @constant {1, 2}
+ * @default 1
+ */
 var foodStatus;
 (function (foodStatus) {
     foodStatus[foodStatus["ACTIVE"] = 1] = "ACTIVE";
     foodStatus[foodStatus["INACTIVE"] = 2] = "INACTIVE";
 })(foodStatus = exports.foodStatus || (exports.foodStatus = {}));
+// Food Schema Validator
 exports.FoodsSchemaValidator = joi_1.object({
     name: joi_1.string()
-        .alphanum()
         .min(3)
         .max(30)
         .required(),

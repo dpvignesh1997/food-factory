@@ -45,14 +45,19 @@ class VendorsModel {
     }
 }
 exports.VendorsModel = VendorsModel;
+/**
+ * Enum for Vendor status
+ * @constant {1, 2}
+ * @default 1
+ */
 var vendorStatus;
 (function (vendorStatus) {
     vendorStatus[vendorStatus["ACTIVE"] = 1] = "ACTIVE";
     vendorStatus[vendorStatus["DISCONTINUED"] = 2] = "DISCONTINUED";
 })(vendorStatus = exports.vendorStatus || (exports.vendorStatus = {}));
+// Joi Validator for Vendor Schema
 exports.VendorSchemaValidator = joi_1.object({
     name: joi_1.string()
-        .alphanum()
         .min(3)
         .max(30)
         .required(),

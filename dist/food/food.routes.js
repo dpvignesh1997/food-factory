@@ -29,13 +29,13 @@ class FoodRoutes {
         // Route for Create Food
         this.router.post('/', this.passport.authenticate('bearer', this.session), this._food.createFood);
         // Route for Get Food By Name
-        this.router.get('/', this.passport.authenticate('bearer', this.session), this._food.getFoodByName);
+        this.router.get('/byNameOrCode', this.passport.authenticate('bearer', this.session), this._food.getFoodByNameOrCode);
         // Route for Get Food By Name
         this.router.get('/pc_gt_sc', this.passport.authenticate('bearer', this.session), this._food.getFoodCostOfProductionHigherThanSellingCost);
         // Route for Update Food Selling or Production Cost
-        this.router.put('/', this.passport.authenticate('bearer', this.session), this._food.updateSellingOrProductionCost);
+        this.router.put('/qty', this.passport.authenticate('bearer', this.session), this._food.updateSellingOrProductionCost);
         // Route for Update Food Ingredients Qty
-        this.router.put('/fi_qty', this.passport.authenticate('bearer', this.session), this._food.updateSellingOrProductionCost);
+        this.router.put('/foodIngredients_qty', this.passport.authenticate('bearer', this.session), this._food.updateSellingOrProductionCost);
         // Route for Delete Food by Code
         this.router.delete('/', this.passport.authenticate('bearer', this.session), this._food.deleteFood);
     }

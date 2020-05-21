@@ -51,7 +51,7 @@ class Order {
                         });
                         newOrder.save((err, savedOrder) => __awaiter(this, void 0, void 0, function* () {
                             /**
-                             * If error in fetching User
+                             * If error in fetching Order
                              * @return {Response}
                              * @status {INTERNAL SERVER ERROR} 500
                              * @message Internal Server Error!
@@ -129,7 +129,7 @@ class Order {
                 }
                 this.Orders.find({ user: _user._id }).exec((err, orders) => {
                     /**
-                     * If error in fetching User
+                     * If error in fetching Order
                      * @return {Response}
                      * @status {INTERNAL SERVER ERROR} 500
                      * @message Internal Server Error!
@@ -148,7 +148,9 @@ class Order {
                         });
                         return;
                     }
-                    res.json(orders);
+                    res.json({
+                        orders
+                    });
                 });
             });
         };
@@ -163,7 +165,7 @@ class Order {
             try {
                 this.Orders.findOne({ _id: new mongodb_1.ObjectId(order) }).exec((err, _order) => __awaiter(this, void 0, void 0, function* () {
                     /**
-                     * If error in fetching User
+                     * If error in fetching Order
                      * @return {Response}
                      * @status {INTERNAL SERVER ERROR} 500
                      * @message Internal Server Error!

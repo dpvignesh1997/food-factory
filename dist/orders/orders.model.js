@@ -46,6 +46,11 @@ class OrdersModel {
     }
 }
 exports.OrdersModel = OrdersModel;
+/**
+ * Enum for Food status
+ * @constant {1, 2, 3}
+ * @default 1
+ */
 var OrderStatus;
 (function (OrderStatus) {
     OrderStatus[OrderStatus["PENDING"] = 1] = "PENDING";

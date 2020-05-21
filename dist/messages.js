@@ -16,7 +16,7 @@ var SessionMessages;
     SessionMessages["FORGOT_PASSWORD"] = "Password Reset mail has been sent!";
     SessionMessages["CHANGE_PASSWORD"] = "Password has been Reset!";
     SessionMessages["PASSWORD_DOES_NOT_MATCH"] = "Passwords does not match!";
-    SessionMessages["RESET_PASSWORD_TOKEN_NOT_VALID"] = "Reset Passwword token is not valid!";
+    SessionMessages["RESET_PASSWORD_TOKEN_NOT_VALID"] = "Invalid Token!";
     SessionMessages["USER_DEACTIVATED"] = "Account Successfully Deactivated!";
     SessionMessages["INPUT_NOT_VALID"] = "Provided Input is not valid!";
 })(SessionMessages || (SessionMessages = {}));

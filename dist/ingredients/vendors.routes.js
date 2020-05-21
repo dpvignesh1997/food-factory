@@ -29,13 +29,13 @@ class VendorsRoutes {
         // Route for Create Vendor
         this.router.post('/', this.passport.authenticate('bearer', this.session), this._vendors.createVendor);
         // Route for Get Vendors By Id
-        this.router.get('/', this.passport.authenticate('bearer', this.session), this._vendors.getVendorByNameOrCode);
+        this.router.get('/byNameOrCode', this.passport.authenticate('bearer', this.session), this._vendors.getVendorByNameOrCode);
         // Route for Get Vendors
-        this.router.get('/status', this.passport.authenticate('bearer', this.session), this._vendors.getVendorByStatus);
+        this.router.get('/byStatus', this.passport.authenticate('bearer', this.session), this._vendors.getVendorByStatus);
         // Route for Update Vendor
-        this.router.put('/', this.passport.authenticate('bearer', this.session), this._vendors.updateVendorByCode);
+        this.router.put('/contactOrStatus', this.passport.authenticate('bearer', this.session), this._vendors.updateVendorByCode);
         // Route for Delete Vendor
-        this.router.delete('/', this.passport.authenticate('bearer', this.session), this._vendors.deleteVendors);
+        this.router.delete('/byCode', this.passport.authenticate('bearer', this.session), this._vendors.deleteVendors);
     }
 }
 exports.VendorsRoutes = VendorsRoutes;

@@ -29,9 +29,9 @@ class OrderRoutes {
         // Route for Place Order
         this.router.post('/', this.passport.authenticate('bearer', this.session), this._order.placeOrder);
         // Route for Get Orders of User
-        this.router.get('/', this.passport.authenticate('bearer', this.session), this._order.getOrdersOfUser);
+        this.router.get('/byUser', this.passport.authenticate('bearer', this.session), this._order.getOrdersOfUser);
         // Route for cancel Order
-        this.router.put('/', this.passport.authenticate('bearer', this.session), this._order.cancelOrder);
+        this.router.put('/byID', this.passport.authenticate('bearer', this.session), this._order.cancelOrder);
     }
 }
 exports.OrderRoutes = OrderRoutes;

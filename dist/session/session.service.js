@@ -61,7 +61,7 @@ class Session {
                  * @responsetype {JSON}
                  */
                 console.error(error);
-                res.status(406).json({
+                res.status(405).json({
                     message: __1.Messages.INPUT_NOT_VALID
                 });
                 return;
@@ -93,12 +93,12 @@ class Session {
                 /**
                  * If User already exist with Email
                  * @return {Response}
-                 * @status {NOT ACCEPTED} 406
+                 * @status {INVALID INPUT} 405
                  * @message Email already exist!
                  * @responsetype {JSON}
                  */
                 if (userWithEmail) {
-                    res.status(406).json({
+                    res.status(405).json({
                         message: __1.Messages.EMAIL_EXIST
                     });
                     return;
@@ -406,7 +406,7 @@ class Session {
                     }
                     this.mailer.sendMail(user.email, `Password Reset Successful`, 'Password Reset', []).then(() => {
                         res.json({
-                            message: __1.Messages.FORGOT_PASSWORD
+                            message: __1.Messages.CHANGE_PASSWORD
                         });
                     }).catch(err => {
                         /**

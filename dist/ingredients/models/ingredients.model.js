@@ -48,14 +48,13 @@ class IngredientsModel {
     }
 }
 exports.IngredientsModel = IngredientsModel;
+// Joi Validator for Ingredients Schema
 exports.IngredientsSchemaValidator = joi_1.object({
     name: joi_1.string()
-        .alphanum()
         .min(3)
         .max(30)
         .required(),
     code: joi_1.string()
-        .alphanum()
         .min(1)
         .max(30)
         .required(),
