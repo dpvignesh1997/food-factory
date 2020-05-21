@@ -11,7 +11,8 @@ export class AuthMiddleware {
     created_by = [
         '/vendor',
         '/ingredient',
-        '/food'
+        '/food',
+        '/order'
     ]
 
     methods = ['POST', 'PUT']
